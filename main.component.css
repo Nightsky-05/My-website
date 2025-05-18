@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
+:host {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url('../../../assets/cool.jpg') no-repeat center center fixed;
+    
+    background-size: cover;
+    z-index: 0;
+  }
+  
+  .main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    height: calc(100vh ); /* full screen minus navbar height */
+    border: 8px ridge goldenrod;
+    text-align: left;
+  }
+   
+  
+    
+  .leaf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #fff8dc; /* light fantasy color */
+    background: crimson;
+    border: 6px ridge goldenrod;
+    height: 100px;
+    width: 220px;
+    border-radius: 40px;
+    box-shadow:
+      0 0 10px #e0c3fc,
+      0 0 20px #a18cd1 inset,
+      0 0 30px #f0f;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Uncial Antiqua', cursive;
+    font-weight: bolder;
+    font-size: 22px;
+    cursor: pointer;
+    text-align: center;
+    animation: glow 2s ease-in-out infinite alternate;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .leaf:hover {
+    background: linear-gradient(135deg, #da22ff, #9733ee);
+    box-shadow:
+      0 0 15px #fff,
+      0 0 25px #f0f,
+      0 0 35px #a18cd1;
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow:
+        0 0 10px #e0c3fc,
+        0 0 20px #a18cd1 inset,
+        0 0 30px #f0f;
+    }
+    to {
+      box-shadow:
+        0 0 20px #ffffff,
+        0 0 30px #ff00ff inset,
+        0 0 40px #cba6f7;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .leaf {
+      height: 80px;
+      width: 180px;
+      font-size: 18px;
+    }
+  
+    .main-wrapper {
+      border: 4px ridge goldenrod;
+      padding: 10px;
+    }
+  }
+  

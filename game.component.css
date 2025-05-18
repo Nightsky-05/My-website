@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
+
+body {
+  background: linear-gradient(to right, #1e1445, #3e1f47);
+  font-family: 'Uncial Antiqua', cursive;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  gap: 18px;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.card {
+  width: 120px;
+  height: 120px;
+  perspective: 1200px;
+  border-radius: 12px;
+  box-shadow: 0 0 9px white;
+  border: 5px ridge black;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background: radial-gradient(circle, #5d3370, #2e1a3d);
+  border: 2px solid white;
+  box-shadow: inset 0 0 5px white;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(to bottom, #ffe0f5, #d9b3e6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #9a66cc;
+  box-shadow: 0 0 8px #b57edc;
+}
+
+.card-back img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#winPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  background: linear-gradient(to right, #7f00ff, #e100ff);
+  padding: 25px 50px;
+  border: 4px solid #fff;
+  border-radius: 15px;
+  text-align: center;
+  font-family: 'Uncial Antiqua', cursive;
+  color: white;
+  box-shadow: 0 0 20px #fff, 0 0 60px #e100ff;
+  z-index: 1000;
+  animation: popup-fade 0.5s ease-in-out;
+}
+
+@keyframes popup-fade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -30%) scale(1);
+  }
+}
+
+.play {
+  border: 3px solid white;
+  border-radius: 25px;
+  background: linear-gradient(to right, #ff4d79, #c32aff);
+  color: white;
+  padding: 12px 24px;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -30%);
+  font-size: 16px;
+  font-family: 'Uncial Antiqua', cursive;
+  box-shadow: 0 0 10px #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.play:hover {
+  background: linear-gradient(to right, #ffffff, #ff80ff);
+  color: #2e1a3d;
+  box-shadow: 0 0 20px #fff;
+}
+.description-popup {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,230,255,0.8));
+  border: 3px solid #a86ff2;  /* Mystic purple border */
+  padding: 25px 35px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px 4px rgba(174, 111, 255, 0.7);  /* Glowing shadow */
+  text-align: center;
+  z-index: 999;
+  font-family: cursive;
+  min-width: 320px;
+  max-width: 80%;
+  animation: fadeInGlow 0.6s ease-in-out;
+  color: black;  /* Dark purple text */
+  backdrop-filter: blur(6px);  /* Soft blurred background effect */
+}
+
+@keyframes fadeInGlow {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.9);
+    box-shadow: 0 0 0 rgba(174, 111, 255, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    box-shadow: 0 0 20px 4px rgba(174, 111, 255, 0.7);  /* Glowing shadow on popup */
+  }
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 900px) {
+  .game-board {
+    grid-template-columns: repeat(4, 1fr);  /* Ensures 4 columns */
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .card {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card-back img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .play {
+    top: 95%;
+    padding: 10px 20px;
+    font-size: 14px;
+  
+  }
+
+  #winPopup {
+    width: 90%;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .description-popup {
+    width: 90%;
+    font-size: 14px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-board {
+    grid-template-columns: repeat(2, 1fr);  /* 2 columns for smaller screens */
+  }
+
+  .card {
+    width: 90px;
+    height: 90px;
+  }
+
+  .card-back img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .play {
+    top: 95%;
+    padding: 8px 18px;
+    font-size: 12px;
+  }
+
+  .description-popup {
+    width: 85%;
+    font-size: 12px;
+    padding: 15px;
+  }
+
+  #winPopup {
+    width: 80%;
+    padding: 15px;
+    font-size: 12px;
+  }
+}

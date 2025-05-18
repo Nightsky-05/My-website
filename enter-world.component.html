@@ -1,0 +1,21 @@
+<div class="map-container">
+    <img src="map.jpg" alt="Fantasy Map" class="map-image">
+  
+    <!-- Clickable areas -->
+    <a class="map-place castle" routerLink="/info">Info Castle </a>
+    <a class="map-place forest" routerLink="/story">Enchanted diary</a>
+    <a class="map-place cave" routerLink="/game">Match Cave</a>
+  </div>
+  
+
+  <div id="popupBackdrop" class="popup-backdrop" style="display: none;">
+    <div class="popup-box">
+      <button class="close-btn" (click)="closePopup()">×</button>
+
+      <br><br><br><br><br><br><br><br><br> 
+      <h2>Welcome to the Fantasy World!</h2>
+      <p>Choose your destination...</p>
+      <p>Click your desired place and ENJOY!!</p>
+    </div>
+  </div>
+  

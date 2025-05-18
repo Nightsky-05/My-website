@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
+:host {
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(ellipse at center,  #000 25%,#1e002b 100%);
+}
+
+/* Typing text animation */
+.typing-text {
+  overflow: hidden;
+  border-right: 3px solid #ffd700;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 2s steps(30, end) forwards, blink 0.75s step-end infinite;
+  font-size: 26px;
+  color: #ffe4b5;
+  font-family: 'Uncial Antiqua', cursive;
+  margin-top: 20px;
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff69b4;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: #ffd700; }
+}
+
+/* Magical floating stars background */
+.floating-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  z-index: -1;
+  opacity: 0.4;
+}
+.floating-stars::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow:
+    50px 100px white,
+    200px 300px #fff,
+    400px 250px #ddd,
+    600px 500px #eee,
+    800px 100px #ccc;
+  animation: twinkle 2s infinite ease-in-out alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+
+/* Intro screen with enchanted look */
+.intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 9999;
+  background: radial-gradient(circle at center, #000 0%, #220033 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeInBg 1s ease-in-out forwards;
+}
+
+/* Hide intro screen when it's done */
+.intro-screen.hidden {
+  display: none;
+}
+
+/* Centered fairy text */
+.fairy-container {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 90px;
+  align-items: center;
+  justify-content: center;
+  color: #ffe4e1;
+  font-family: 'Uncial Antiqua', cursive;
+  text-align: center;
+  text-shadow: 0 0 20px #ffb6c1, 0 0 30px #9932cc;
+}
+
+/* Fade out effect */
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+/* Zoom effect for background */
+.zoom-img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transform: scale(0);
+  animation: zoomIn 2s forwards;
+}
+
+@keyframes zoomIn {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeInBg {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Navigation bar with enchanted scroll background */
+nav {
+  position: relative;
+  z-index: 10;
+  height: 90px;
+  background-image: url('../assets/nav.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 4px ridge gold;
+  padding: 10px;
+  box-shadow: 0 0 15px gold;
+}
+
+/* Navigation links */
+ul {
+  list-style: none;
+  display: flex;
+  gap: 90px;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+  font-family:  cursive;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 10px 15px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(26, 0, 26, 0.4));
+  box-shadow: 0 0 15px goldenrod;
+  transition: 0.3s ease;
+  animation: pulseGlow 2s infinite alternate;
+}
+
+li a:hover {
+  color: #ffd700;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px goldenrod;
+  transform: scale(1.1);
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px goldenrod, 0 0 20px goldenrod;
+  }
+  100% {
+    box-shadow: 0 0 20px goldenrod 0 0 30px goldenrod;
+  }
+}
+
+/* Text style with magical aura */
+.text {
+  font-family: 'Uncial Antiqua', cursive;
+  color: #ffffff;
+  font-weight: bolder;
+  text-align: left;
+  animation: glowText 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 10px #ffe4b5, 0 0 20px #dda0dd, 0 0 30px #ff69b4;
+  }
+  to {
+    text-shadow: 0 0 20px #fff8dc, 0 0 30px #ff1493, 0 0 40px #ff69b4;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  ul {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  li a {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .typing-text {
+    font-size: 18px;
+  }
+
+  .fairy-container {
+    font-size: 40px;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Uncial Antiqua', cursive;
+    background: linear-gradient(to right, #1e1445, #3e1f47);
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .book-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .book {
+    width: 320px;
+    height: 420px;
+    perspective: 2000px;
+    position: relative;
+    
+  }
+  
+  .book-cover {
+    background-image: url(../../../assets/books.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 20px #fff, 0 0 40px #a044ff;
+    transition: transform 1s ease;
+    border: 5px ridge  goldenrod;
+  }
+  
+  .book-cover h1 {
+    font-size: 32px;
+    text-shadow: 0 0 10px white;
+    color: white;
+    font-family: cursive;
+  }
+  
+  .book-pages {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../../assets/red.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #2e1a3d;
+    padding: 24px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    transition: transform 1s ease;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+    border: 5px ridge  goldenrod;
+  }
+  
+  .book-pages.open {
+    transform: rotateY(0deg);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    
+  }
+  
+  label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: white;
+    font-family: 'Uncial Antiqua', cursive;
+    font-weight: bolder;
+    text-shadow: 0 0 10px crimson;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #a86ff2;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: cursive;
+    box-shadow: 0 0 10px #e1bfff;
+    border: 5px ridge  goldenrod;
+  }
+  
+  .login-button {
+    background: linear-gradient(to right, #ff6ec4, #7873f5);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Uncial Antiqua', cursive;
+    box-shadow: 0 0 10px #fff;
+    transition: all 0.3s ease;
+    border: 5px ridge  goldenrod;
+  }
+  
+  .login-button:hover {
+    background: linear-gradient(to right, #ffffff, #d580ff);
+    color: #2e1a3d;
+  }
+  

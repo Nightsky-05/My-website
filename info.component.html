@@ -1,0 +1,46 @@
+<div class="enchanted-scroll">
+    <h1 class="glow-title">Lore Library of Mystica</h1>
+  
+    <div class="category-box">
+      <div class="section-title" >Celestial Deities</div>
+      <div class="scroll-options" id="godsOptions">
+        <button onclick="showPopup('Zeus', 'zeus.jpg', 'Zeus, ruler of Mount Olympus, is the god of thunder and lightning.')">Zeus</button>
+        <button onclick="showPopup('Athena', 'athena.jpg', 'Athena is the goddess of wisdom, war strategy, and heroic endeavor.')">Athena</button>
+      </div>
+    </div>
+  
+    <div class="category-box">
+      <div class="section-title" >Mystic Beasts</div>
+      <div class="scroll-options" id="creaturesOptions">
+        <button onclick="showPopup('Phoenix', 'phoenix.jpg', 'A fiery bird reborn from its ashes, symbolizing immortality.')">Phoenix</button>
+        <button onclick="showPopup('Dragon', 'dragonn.jpg', 'Majestic winged beasts that breathe fire and guard ancient secrets.')">Dragon</button>
+      </div>
+    </div>
+  
+    <div class="category-box">
+      <div class="section-title" >Realms & Sanctuaries</div>
+      <div class="scroll-options" id="placesOptions">
+        <button onclick="showPopup('Olympus', 'olympus.jpg', 'Home of the gods, high above the clouds and mortals.')">Olympus</button>
+        <button onclick="showPopup('Avalon', 'avalon.jpg', 'A magical island of healing and eternal youth.')">Avalon</button>
+      </div>
+    </div>
+  
+    <div class="category-box">
+      <div class="section-title" >Arcane Relics</div>
+      <div class="scroll-options" id="itemsOptions">
+        <button onclick="showPopup('Mjolnir', 'mjolnir.jpg', 'Thor\'s mighty hammer, capable of summoning storms.')">Mjolnir</button>
+        <button onclick="showPopup('Excalibur', 'excalibur.jpg', 'The sword of kings, pulled from stone by Arthur.')">Excalibur</button>
+      </div>
+    </div>
+  
+    <!-- Magical Popup -->
+    <div id="popupOverlay" class="mystic-overlay" style="display: none;">
+      <div class="mystic-popup">
+        <button class="close-popup-btn" onclick="hidePopup()">✖</button>
+        <img id="popupImage" src="" alt="Mystical Being">
+        <h2 id="popupTitle"></h2>
+        <p id="popupDescription"></p>
+      </div>
+    </div>
+  </div>
+  

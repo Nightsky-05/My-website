@@ -1,0 +1,213 @@
+/* Global fantasy styles */
+body {
+    background: black;
+    font-family: 'Cinzel Decorative', cursive;
+    color: white;
+    overflow-x: hidden;
+  }
+  
+  /* Floating potion bottle */
+  .potion-bottle-container {
+    position: fixed;
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    animation: floatBottle 4s ease-in-out infinite;
+  }
+  
+  .potion-bottle {
+    width: 190px;
+    cursor: pointer;
+  }
+
+  .potion-bottle:hover { 
+   transform: rotate(40deg) scale(1.1);
+  }
+
+  @keyframes floatBottle {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -10px); }
+  }
+  
+  /* Potion fill animation */
+  .potion-fill {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(to top, rgba(255, 105, 180, 0.8), rgba(255, 182, 193, 0.5));
+    z-index: 500;
+    overflow: hidden;
+    transition: height 4s ease-in-out;
+  }
+  
+  /* Sparkle overlay */
+  .sparkles {
+    background-image: url('../../../assets/sparkle.gif');
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  
+  /* Content reveal */
+  .magical-content {
+    opacity: 0;
+    position: relative;
+    z-index: 600;
+    transition: opacity 2s ease-in;
+    margin-top: 120px;
+    font-family: cursive;
+  }
+  
+  /* Scroll container */
+  .scroll {
+    margin: 2rem auto;
+    width: 60%;
+    padding: 2rem;
+    border: 2px solid;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    animation: floatScroll 6s infinite ease-in-out;
+  }
+  
+  /* Scroll colors */
+  .scroll-blue {
+    border-color: #00ffff;
+  }
+  .scroll-purple {
+    border-color: #d291ff;
+  }
+  
+  /* Glows */
+  .glow-blue {
+    box-shadow: 0 0 20px #00ffff;
+  }
+  .glow-purple {
+    box-shadow: 0 0 20px #d291ff;
+  }
+  
+  @keyframes floatScroll {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Form elements */
+  form label, form input, form textarea, form button {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    font-family: cursive;
+    background: none;
+    border: none;
+    color: white;
+  }
+  
+  form input, form textarea {
+    border-bottom: 2px solid white;
+    padding: 0.5rem;
+  }
+  
+  form button {
+    margin-top: 1.5rem;
+    background: linear-gradient(45deg, #ff66cc, #ff99cc);
+    border: none;
+    border-radius: 20px;
+    padding: 0.7rem;
+    font-size: 1.2rem;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff69b4;
+    text-shadow: 0 0 5px white;
+    transition: transform 0.3s;
+  }
+  
+  form button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ff69b4, 0 0 30px #ffb6c1;
+  }
+  
+  /* CONTACT DETAILS STYLING */
+  .contact-section {
+    background: rgba(0, 255, 255, 0.08);
+    box-shadow: 0 0 25px #00ffff, 0 0 50px #00ffff88;
+    border-color: #00ffff;
+    animation: shimmerContact 3s infinite;
+    color: #ccffff;
+  }
+  
+  /* ABOUT DETAILS STYLING */
+  .about-section {
+    background: rgba(218, 112, 214, 0.08);
+    box-shadow: 0 0 25px #00ffff, 0 0 50px #00ffff88;
+    border-color: #00ffff;
+    animation: shimmerAbout 3s infinite;
+    color: #f8e8ff;
+  }
+  
+  /* SPARKLE ANIMATIONS */
+  @keyframes shimmerContact {
+    0% {
+      box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff66;
+    }
+    50% {
+      box-shadow: 0 0 30px #66ffff, 0 0 60px #00ffffaa;
+    }
+    100% {
+      box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff66;
+    }
+  }
+  
+  @keyframes shimmerAbout {
+    0% {
+        box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff66;
+      }
+      50% {
+        box-shadow: 0 0 30px #66ffff, 0 0 60px #00ffffaa;
+      }
+      100% {
+        box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff66;
+      }
+  }
+  
+  /* Fancy headers for sections */
+  .magical-content h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2.5rem;
+    color: #ffe6ff;
+    text-shadow: 0 0 10px #fff0f5, 0 0 20px #ffccff;
+    margin-bottom: 1rem;
+  }
+  .close-button {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff0f5;
+    cursor: pointer;
+    z-index: 1100;
+    background: rgba(255, 105, 180, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff69b4, 0 0 30px #ff1493;
+    transition: transform 0.3s, background 0.3s, opacity 1s ease-in;
+    backdrop-filter: blur(5px);
+    display: none;
+    opacity: 0;
+  }
+  
+  .close-button.show {
+    display: block;
+    opacity: 1;
+  }
+  
+  .close-button:hover {
+    transform: scale(1.2);
+    background: rgba(255, 182, 193, 0.3);
+  }
+  
+  

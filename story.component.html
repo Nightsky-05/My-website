@@ -1,0 +1,45 @@
+<div class="diary-container">
+    <h1 class="title">✨ The Celestial Storybook ✨</h1>
+  
+    <div class="form-section">
+      <h2 class="section-heading glow-purple">🔮 Embark on Your Magical Journey 🔮</h2>      
+      
+  
+      <label>Choose Your Star Sign:
+        <select id="zodiacs">
+          <option>Aries</option>
+          <option>Taurus</option>
+          <option>Gemini</option>
+          <option>Cancer</option>
+          <option>Leo</option>
+          <option>Virgo</option>
+          <option>Libra</option>
+          <option>Scorpio</option>
+          <option>Sagittarius</option>
+          <option>Capricorn</option>
+          <option>Aquarius</option>
+          <option>Pisces</option>
+        </select>
+      </label>
+  
+     
+  
+      <button onclick="window.revealPersonality()">🔍 Reveal My Divine Self</button>
+      <div id="personalityReveal" class="reveal-box"></div>
+    </div>
+  
+    <div class="form-section">
+      <h2 class="section-heading glow-blue">📜 Scribe Your Epic Tales </h2>
+      <textarea id="userStory" rows="8" placeholder="Weave your magical story here..."></textarea>
+      <button onclick="window.saveUserStory()">Save My Legend</button>
+      <div id="savedMessage" class="save-msg"></div>
+    </div>
+  
+    <div class="form-section">
+      <h2 class="section-heading glow-gold">📖 Read a Glorious Fable</h2>
+      <button onclick="window.generateStory(1)">📘  The Crystal Grove</button>
+      <button onclick="window.generateStory(3)">📕  The Ember Trials</button>
+      <button onclick="window.generateStory(2)">📙  The Moonlit Sorceress</button>
+      <div id="generatedStory" class="story-box"></div>
+    </div>
+  </div>

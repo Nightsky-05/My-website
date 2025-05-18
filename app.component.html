@@ -1,0 +1,25 @@
+<nav>
+  <div class="text">
+    <h1 >Fantasy World</h1>
+    </div>
+  <ul >
+    <li><a routerLink="/" class="pink">Main</a></li>
+    <li><a routerLink="/login" class="pink">Login</a></li>
+    <li><a routerLink="/contact" class="pink">Contact</a></li>
+  </ul>
+ 
+</nav>
+<div class="floating-stars"></div>
+<div class="intro-screen" [class.hidden]="!showIntro">
+  <div class="stars"></div>
+  <div class="fairy-container">
+    <img src="fairrry.gif" alt="Fairy" class="flying-fairy" />
+    <div class="typing-text">Loading the realm of Magic...</div>
+    <audio autoplay>
+      <source src="magic-wand-6214.mp3" />
+    </audio>
+  </div>
+</div>
+<main>
+  <router-outlet></router-outlet>
+</main>
